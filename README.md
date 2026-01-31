@@ -72,6 +72,66 @@ Open http://localhost:8080 in your browser.
 └─────────────────────────────────────────────────────────────┘
 ```
 
+## LLM Model Serving with Solo-CLI
+
+Solo-CLI supports serving LLM models for vision-language tasks. Since Docker is not available in this environment, use **Ollama** or **llama.cpp** instead of vLLM.
+
+### Option 1: Ollama (Recommended)
+
+#### 1. Install Ollama
+
+```bash
+# Install zstd (required dependency)
+apt-get update && apt-get install -y zstd
+
+# Install Ollama
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
+#### 2. Start Ollama Service
+
+Open a **separate terminal** and run:
+
+```bash
+ollama serve
+```
+
+Keep this terminal running.
+
+#### 3. Serve Model with Solo-CLI
+
+```bash
+# Serve a model (model must be available in Ollama registry)
+solo serve --server ollama --model llama3.2:1b
+
+# Other available models
+solo serve --server ollama --model llama3.2:3b
+solo serve --server ollama --model llava:7b      # Vision-Language model
+solo serve --server ollama --model llava:13b
+```
+
+> **Note**: The model name must be a valid model from [Ollama Library](https://ollama.com/library). Solo-CLI will automatically pull the model if not already downloaded.
+
+### Option 2: llama.cpp
+
+```bash
+solo serve --server llama.cpp --model <model_path_or_hf_repo>
+```
+
+### Solo-CLI Config
+
+If you encounter Docker-related errors, ensure your `~/.solo/config.json` has:
+
+```json
+{
+    "environment": {
+        "ollama_native": true
+    }
+}
+```
+
+---
+
 ## Demo Details
 
 ### Demo 1: ACT Training (Solo-CLI)
