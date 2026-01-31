@@ -18,6 +18,12 @@ else
     echo "Warning: No NVIDIA GPU detected"
 fi
 
+# Check and install pip if not available
+if ! command -v pip3 &> /dev/null && ! command -v pip &> /dev/null; then
+    echo "pip not found. Installing pip..."
+    apt-get update && apt-get install -y python3-pip
+fi
+
 # Create virtual environment
 echo "Creating Python virtual environment..."
 python3 -m venv ./vessl-hackathon-env
@@ -35,7 +41,7 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 echo ""
 echo "Installing common dependencies..."
 pip install \
-    transformers \
+    "transformers<5.0.0" \
     solo-cli \
     accelerate \
     datasets \
