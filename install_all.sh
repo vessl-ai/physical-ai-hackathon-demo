@@ -72,15 +72,6 @@ echo ""
 echo "Installing LeRobot..."
 pip install lerobot || echo "LeRobot installation failed, some features may not work"
 
-# Clone useful repositories
-echo ""
-echo "Cloning useful repositories..."
-cd ~/physical-ai-demos
-
-if [ ! -d "lerobot" ]; then
-    git clone https://github.com/huggingface/lerobot.git
-fi
-
 # Summary
 echo ""
 echo "========================================"
