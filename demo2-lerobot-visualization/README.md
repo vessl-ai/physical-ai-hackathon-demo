@@ -1,4 +1,4 @@
-# Demo 3: LeRobot Dataset Visualization (VESSL AI)
+# Demo 2: LeRobot Dataset Visualization (VESSL AI)
 
 Web-based visualization dashboard for LeRobot datasets.
 **No physical robot required** - visualize datasets from HuggingFace.
@@ -8,7 +8,7 @@ Web-based visualization dashboard for LeRobot datasets.
 ## Quick Start
 
 ```bash
-cd ~/physical-ai-demos/demo3-lerobot-visualization
+cd ~/physical-ai-demos/demo2-lerobot-visualization
 source ~/vessl-hackathon-env/bin/activate
 pip install -r requirements.txt
 

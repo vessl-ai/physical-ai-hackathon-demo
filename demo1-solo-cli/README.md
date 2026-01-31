@@ -137,18 +137,16 @@ Expected output:
 
 Once training is complete, you can:
 
-1. **Test Inference** (Demo 2)
+1. **Visualize Dataset** (Demo 2)
    ```bash
-   cd ../demo2-vla-inference-api
-   python test_vla_inference.py \
-     --checkpoint outputs/train/lerobot_aloha_sim_transfer_cube_human_act/checkpoints/last/pretrained_model \
-     --dataset lerobot/aloha_sim_transfer_cube_human \
-     --num-samples 5
+   cd ../demo2-lerobot-visualization
+   python dashboard.py --dataset lerobot/aloha_sim_transfer_cube_human_image --port 7860
    ```
 
-2. **Test in Simulation** (Demo 4)
+2. **Test in Simulation** (Demo 3)
    ```bash
-   cd ../demo4-simulation
+   cd ../demo3-simulation
+   export MUJOCO_GL=egl
    python sim_server.py --port 8080 \
      --checkpoint outputs/train/lerobot_aloha_sim_transfer_cube_human_act/checkpoints/last/pretrained_model
    ```

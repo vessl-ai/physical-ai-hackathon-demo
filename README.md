@@ -35,7 +35,7 @@ source ./vessl-hackathon-env/bin/activate
 ### Run Simulation
 
 ```bash
-cd demo4-simulation
+cd demo3-simulation
 export MUJOCO_GL=egl  # For headless rendering
 python sim_server.py --port 8080
 ```
@@ -47,27 +47,25 @@ Open http://localhost:8080 in your browser.
 | Demo | Description | Command |
 |------|-------------|---------|
 | **demo1** | Train ACT policy | `solo robo --train` |
-| **demo2** | Test inference | `python test_vla_inference.py` |
-| **demo3** | Visualize dataset | `python dashboard.py` |
-| **demo4** | Run simulation | `python sim_server.py` |
+| **demo2** | Visualize dataset | `python dashboard.py` |
+| **demo3** | Run simulation | `python sim_server.py` |
 
 ## Workflow
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                                                             │
-│   demo3: Visualize    demo1: Train    demo2: Test          │
+│   demo2: Visualize    demo1: Train    demo3: Simulate      │
 │   ┌──────────┐       ┌──────────┐    ┌──────────┐          │
-│   │ Dataset  │       │   ACT    │───▶│Inference │          │
-│   │Dashboard │       │ Training │    │  Test    │          │
+│   │ Dataset  │       │   ACT    │───▶│gym-aloha │          │
+│   │Dashboard │       │ Training │    │Simulation│          │
 │   └──────────┘       └────┬─────┘    └──────────┘          │
 │                           │                                 │
 │                           ▼                                 │
-│                    ┌──────────┐                             │
-│                    │  demo4   │                             │
-│                    │gym-aloha │                             │
-│                    │Simulation│                             │
-│                    └──────────┘                             │
+│                    ┌────────────┐                           │
+│                    │  Trained   │                           │
+│                    │   Model    │                           │
+│                    └────────────┘                           │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -145,33 +143,21 @@ solo robo --train
 # Select: ACT
 ```
 
-### Demo 2: Inference Test
-
-Test trained ACT model with dataset samples.
-
-```bash
-cd demo2-vla-inference-api
-python test_vla_inference.py \
-  --checkpoint <path_to_checkpoint> \
-  --dataset lerobot/aloha_sim_transfer_cube_human \
-  --num-samples 5
-```
-
-### Demo 3: Dataset Visualization
+### Demo 2: Dataset Visualization
 
 Web dashboard for visualizing LeRobot datasets.
 
 ```bash
-cd demo3-lerobot-visualization
+cd demo2-lerobot-visualization
 python dashboard.py --dataset lerobot/aloha_sim_transfer_cube_human_image --port 7860
 ```
 
-### Demo 4: ALOHA Simulation
+### Demo 3: ALOHA Simulation
 
 Test ACT policy in gym-aloha simulation with real-time browser visualization.
 
 ```bash
-cd demo4-simulation
+cd demo3-simulation
 export MUJOCO_GL=egl
 python sim_server.py --port 8080 --checkpoint <path_to_checkpoint>
 ```
@@ -238,19 +224,16 @@ pip install lerobot --upgrade
 
 ```
 physical-ai-demos/
-├── demo1-solo-cli/           # ACT training with Solo-CLI
+├── demo1-solo-cli/              # ACT training with Solo-CLI
 │   ├── README.md
 │   └── setup.sh
-├── demo2-vla-inference-api/  # Inference testing
-│   ├── test_vla_inference.py
-│   └── requirements.txt
-├── demo3-lerobot-visualization/  # Dataset dashboard
+├── demo2-lerobot-visualization/ # Dataset dashboard
 │   ├── dashboard.py
 │   └── requirements.txt
-├── demo4-simulation/         # gym-aloha simulation
+├── demo3-simulation/            # gym-aloha simulation
 │   ├── sim_server.py
 │   └── requirements.txt
-├── install_all.sh           # Full installation script
+├── install_all.sh              # Full installation script
 └── README.md
 ```
 

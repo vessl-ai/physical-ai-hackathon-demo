@@ -1,4 +1,4 @@
-# Demo 4: ALOHA Simulation (VESSL AI)
+# Demo 3: ALOHA Simulation (VESSL AI)
 
 Web-based simulation for testing ACT policies on ALOHA Transfer Cube task.
 **No physical robot required** - runs entirely in gym-aloha simulation.
@@ -21,7 +21,7 @@ dataset in a simulated environment. Compare policy performance against random ac
 ### 1. Install Dependencies
 
 ```bash
-cd ~/physical-ai-demos/demo4-simulation
+cd ~/physical-ai-demos/demo3-simulation
 pip install -r requirements.txt
 ```
 
