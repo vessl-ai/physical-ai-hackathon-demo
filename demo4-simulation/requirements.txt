@@ -1,0 +1,26 @@
+# ALOHA Simulation with ACT Policy Requirements
+
+# Web server
+fastapi
+uvicorn[standard]
+websockets
+
+# Simulation
+gymnasium
+mujoco
+gym-aloha
+
+# Deep learning
+torch
+torchvision
+einops
+
+# LeRobot for ACT policy
+lerobot
+huggingface-hub
+safetensors
+
+# Utilities
+numpy
+pillow
+pyyaml

@@ -1,0 +1,10 @@
+# LeRobot Visualization Requirements
+# Visualize lerobot/aloha_sim_transfer_cube_human dataset
+
+gradio>=4.0.0
+datasets
+huggingface_hub
+matplotlib
+numpy
+pandas
+pillow

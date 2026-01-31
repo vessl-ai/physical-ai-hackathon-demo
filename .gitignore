@@ -1,0 +1,104 @@
+# ===========================================
+# Physical AI Demos - .gitignore
+# ===========================================
+
+# ----- Python -----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ----- Virtual Environments -----
+venv/
+env/
+ENV/
+.venv/
+.env/
+vessl-hackathon-env/
+*-env/
+
+# ----- IDE -----
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# ----- Jupyter -----
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ----- Model & Training Outputs -----
+outputs/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+wandb/
+runs/
+logs/
+tensorboard/
+
+# ----- Datasets & Cache -----
+data/
+datasets/
+.cache/
+*.parquet
+*.arrow
+*.hdf5
+*.h5
+videos/
+
+# ----- HuggingFace Cache -----
+.huggingface/
+hub/
+
+# ----- Large Files -----
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# ----- LeRobot Clone (use pip install instead) -----
+lerobot/
+
+# ----- OS Files -----
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.temp
+
+# ----- Secrets -----
+.env
+.env.local
+*.secret
+secrets/
+credentials/

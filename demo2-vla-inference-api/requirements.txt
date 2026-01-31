@@ -1,0 +1,25 @@
+# Demo 2: VLA Model Inference Requirements
+# Test ACT policy on lerobot/aloha_sim_transfer_cube_human
+
+# LeRobot (for ACT policy)
+lerobot
+
+# PyTorch
+torch>=2.0.0
+torchvision
+
+# HuggingFace datasets
+datasets
+huggingface_hub
+
+# Video frame extraction
+av  # PyAV for video loading
+opencv-python  # fallback
+
+# Visualization
+matplotlib
+pillow
+
+# Utilities
+numpy
+tqdm
